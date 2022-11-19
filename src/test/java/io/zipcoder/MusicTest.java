@@ -19,7 +19,6 @@ public class MusicTest {
 
     @Test
     public void selectionTest2(){
-
         String[] playlist = {"dancinginthedark","rio","liveoak","liveoak"};
         Music music = new Music(playlist);
         Integer startingIndex = 0;
@@ -28,4 +27,6 @@ public class MusicTest {
         Integer actual = music.selection(startingIndex, selection);
         Assert.assertEquals(expected, actual);
     }
+
+
 }
