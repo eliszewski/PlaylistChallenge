@@ -12,29 +12,30 @@ public class Music {
         this.playList = playList;
     }
 
-    public Integer selection(Integer startIndex, String selection){
-        int len = this.playList.length;
-        int shortestPath = len * 2;
+    public Integer selection(Integer startIndex, String selection) {
+        int shortestPath = this.playList.length * 2;
         int temp = Integer.MAX_VALUE;
-        for(int i = 0; i<len; i++){
-            if(this.playList[i].equals(selection)){
+
+        for (int i = 0; i < this.playList.length; i++) {
+            if (this.playList[i].equals(selection)) {
                 int directRange = Math.abs(startIndex - i);
-                if(directRange < len/2) temp = directRange;
-                else temp = len - directRange;
+                if (directRange < this.playList.length / 2) {
+                    temp = directRange;
+                } else {
+                    temp = this.playList.length - directRange;
+                }
+                if (temp < shortestPath) {
+                    shortestPath = temp;
+                }
             }
-            if(temp<shortestPath)shortestPath = temp;
         }
+
         return shortestPath;
     }
 
-}
-//find selection index
-// check start < selectionIndex
-// selection - start = distance with no wrap
-// startPOS + (len - selection)
-//compare the 2 then return the lowest
 
-//start>selection index
+}
+
 
 
 

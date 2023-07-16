@@ -3,6 +3,9 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 public class MusicTest {
 
     @Test
@@ -14,7 +17,7 @@ public class MusicTest {
         String selection = "cecelia";
         Integer expected = 2;
         Integer actual = music.selection(startingIndex, selection);
-        Assert.assertEquals(expected, actual);
+        assertThat(expected,is(actual));
     }
 
     @Test
@@ -25,7 +28,7 @@ public class MusicTest {
         String selection = "liveoak";
         Integer expected = 1;
         Integer actual = music.selection(startingIndex, selection);
-        Assert.assertEquals(expected, actual);
+        assertThat(expected,is(actual));
     }
 
 
